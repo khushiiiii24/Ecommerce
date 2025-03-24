@@ -1,0 +1,39 @@
+.productTitle {
+  font-weight: 900;
+}
+.productCategory {
+  font-size: 17px;
+  font-weight: 400;
+}
+.productPrice {
+  font-size: x-large;
+}
+button {
+  background-color: hotpink;
+  padding: 5px 10px;
+  color: white;
+  font-size: larger;
+  border-radius: 10px;
+}
+.Singleproduct {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.leftSide {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.rightSide {
+  width: 50%;
+}
+.left-side-img {
+  width: 50%;
+}
+.SingleproductTitle {
+  font-size: xx-large;
+}
+.SingleproductPrice {
+  font-size: xxx-large;
+}

@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header,
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem;
+  background-color: rebeccapurple;
+}
+header {
+  height: 60px;
+  color: #fff;
+}
+header ul li a {
+  color: #fff;
+}
+.productConatiner {
+  padding: 3rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.product {
+  width: 22%;
+  border: 1px solid;
+  border-radius: 1rem;
+  height: 400px;
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+}
+.product img {
+  width: 80%;
+  height: 50%;
+}
