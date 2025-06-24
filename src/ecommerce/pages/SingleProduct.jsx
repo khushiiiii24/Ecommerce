@@ -1,11 +1,13 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import UserContext, { EcomContext } from "../components/UseContext";
 // import { useEcom } from "../contexts/EcomProvider";
 
 function SingleProduct() {
   const { id } = useParams();
   const [product, setProduct] = useState({});
+const {cart,handleAddToCart}=useContext(EcomContext);
 
   useEffect(() => {
     fetchSingleData(id);
@@ -32,7 +34,7 @@ function SingleProduct() {
 
         <div className="cta">
           <button>Add To Wishlist</button>
-          <button>Add To Cart</button>
+          <button onClick={()=>handleAddToCart(product)}>Add To Cart</button>
         </div>
       </div>
     </div>
