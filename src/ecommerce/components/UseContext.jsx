@@ -39,7 +39,6 @@ const[cart,setCart]=useState([])
           ? { ...cartItem, quantity: cartItem.quantity > 1 ? cartItem.quantity - 1 : 1 }
           : cartItem
       )
-      // .filter((cartItem)=>cartItem.quantity>0)
     );
   }
   console.log(cart);

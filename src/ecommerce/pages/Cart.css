@@ -1,71 +1,99 @@
 .container {
   display: flex;
   justify-content: space-between;
-  padding: 40px;
-  gap: 40px;
+  padding: 2.5rem;
+  gap: 2.5rem;
+  flex-wrap: wrap; /* make it wrap on smaller screens */
 }
 
 .cart-section {
   flex: 1;
   background: white;
-  padding: 20px;
-  border-radius: 12px;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
 }
 
 .cart-section h2 {
-  font-size: 24px;
-  margin-bottom: 5px;
+  font-size: 1.5rem;
+  margin-bottom: 0.3125rem;
 }
 
 .cart-section p {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: gray;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .cart-item {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
   border: 1px solid #eee;
-  padding: 10px;
-  border-radius: 10px;
+  padding: 0.625rem;
+  border-radius: 0.625rem;
   background: #fff;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0.0625rem 0.3125rem rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap; /* allows better mobile stacking */
 }
 
 .cart-item img {
-  width: 80px;
-  height: 80px;
-  border-radius: 8px;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 0.5rem;
   object-fit: cover;
-  margin-right: 15px;
+  margin-right: 0.9375rem;
 }
 
 .item-details {
   flex: 1;
+  min-width: 250px; /* ensures it stacks well */
 }
 
 .item-details h3 {
-  font-size: 18px;
+  font-size: 1.125rem;
   margin: 0;
 }
 
 .item-details p {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #666;
 }
 
 .item-details span {
   display: inline-block;
-  font-size: 14px;
-  margin-right: 10px;
+  font-size: 0.875rem;
+  margin-right: 0.625rem;
 }
 
 .item-details button {
   background: transparent;
   border: none;
-  font-size: 18px;
+  font-size: 1.125rem;
   cursor: pointer;
-  /* color: #e74c3c; */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+    flex-direction: column;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-item img {
+    margin-bottom: 1rem;
+  }
+
+  .item-details span {
+    display: block;
+    margin: 0.25rem 0;
+  }
+
+  h3 {
+    text-align: center;
+  }
 }
