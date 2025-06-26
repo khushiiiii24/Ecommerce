@@ -7,7 +7,7 @@ import UserContext, { EcomContext } from "../components/UseContext";
 function SingleProduct() {
   const { id } = useParams();
   const [product, setProduct] = useState({});
-const {cart,handleAddToCart}=useContext(EcomContext);
+const {handleAddToCart}=useContext(EcomContext);
 
   useEffect(() => {
     fetchSingleData(id);

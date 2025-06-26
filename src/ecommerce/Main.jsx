@@ -7,7 +7,7 @@ import "./Ecommerce.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import SingleProduct from "./pages/SingleProduct";
-import UseContext from "./components/UseContext";
+import UserContext from "./components/UseContext";
 
 const router = createBrowserRouter([
   {
@@ -44,9 +44,9 @@ const router = createBrowserRouter([
 
 function Main() {
   return (
-    <UseContext>
+    <UserContext>
           <RouterProvider router={router} />
-    </UseContext>
+    </UserContext>
 
     // <>
     //   <Header />

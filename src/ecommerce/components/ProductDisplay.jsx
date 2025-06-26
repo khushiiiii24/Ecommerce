@@ -16,7 +16,8 @@ function trimContent(input) {
 
 // TEMPLATE LITERAL
 function ProductDisplay({ product }) {
-  const{handleAddToCart}=useContext(EcomContext);
+  // const{handleAddToCart}=useContext(EcomContext);
+          // console.log(product.image);
 
   return (
     <>
@@ -24,11 +25,12 @@ function ProductDisplay({ product }) {
         {/* {generateRandomHash(product.id)} */}
         <a href={`/product/${product.id}`}>
           <img src={product.image} alt="" />
+          
         </a>
         <div className="content">
           <h3>{trimContent(product.title)}</h3>
           <p>{product.price}</p>
-          <button onClick={()=>handleAddToCart(product)}>Add To Cart</button>
+          {/* <button onClick={()=>handleAddToCart(product)}>Add To Cart</button> */}
         </div>
       </div>
     </>
