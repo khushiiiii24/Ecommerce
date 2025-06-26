@@ -1,0 +1,30 @@
+.singleProduct{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+}
+.left{
+    width: 80%;
+}
+.left img{
+    width: 100%;
+}
+.cta{
+    display: flex;
+    gap: 10px;
+}
+.singleProductTitle{
+    font-size: 35px;
+}
+.addToWishlist{
+        padding: 10px;
+    background-color: yellow;
+    border: none;
+
+}
+.addToCart{
+    padding: 10px;
+    border: none;
+    background-color: green;
+}

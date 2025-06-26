@@ -5,16 +5,17 @@ function Header() {
   const {cart}=useContext(EcomContext)
   return (
     <header>
-      <h2>Ecommerce</h2>
+      <Link to="/"> <h2>Ecommerce</h2></Link>
+     
       <ul>
         <li>
-          <a href="">About Us</a>
+          About Us
         </li>
         <li>
-          <a href=""><Link to="/cart">Cart {cart.length}</Link></a>
+          <Link to="/cart">Cart {cart.length}</Link>
         </li>
         <li>
-          <a href="">Wishlist</a>
+          Wishlist
         </li>
       </ul>
     </header>

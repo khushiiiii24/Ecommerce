@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { EcomContext } from "./UseContext";
+import { Link } from "react-router-dom";
 
 function trimContent(input) {
   return input.length > 50
@@ -23,10 +24,10 @@ function ProductDisplay({ product }) {
     <>
       <div className="product">
         {/* {generateRandomHash(product.id)} */}
-        <a href={`/product/${product.id}`}>
+        <Link to={`/product/${product.id}`}>
           <img src={product.image} alt="" />
           
-        </a>
+        </Link>
         <div className="content">
           <h3>{trimContent(product.title)}</h3>
           <p>{product.price}</p>
