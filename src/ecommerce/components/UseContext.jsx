@@ -11,10 +11,10 @@ function UserContext({ children }) {
 // })
 const[cart,setCart]=useState([])
   function handleAddToCart(product) {
-    if (productAlreadyExists(product.id)) {
+    if (productAlreadyExists(product._id)) {
       setCart(
         cart.map((cartItem) =>
-          cartItem.id === product.id
+          cartItem._id === product._id
             ? { ...cartItem, quantity: cartItem.quantity + 1 }
             : cartItem
         )
@@ -23,19 +23,19 @@ const[cart,setCart]=useState([])
       setCart([...cart, { ...product, quantity: 1 }]);
     }
   }
-  function increment(id) {
+  function increment(_id) {
     setCart(
       cart.map((cartItem) =>
-        cartItem.id === id
+        cartItem._id === _id
           ? { ...cartItem, quantity: cartItem.quantity + 1 }
           : cartItem
       )
     );
   }
-  function decrement(id) {
+  function decrement(_id) {
     setCart(
       cart.map((cartItem) =>
-        cartItem.id === id
+        cartItem._id === _id
           ? { ...cartItem, quantity: cartItem.quantity > 1 ? cartItem.quantity - 1 : 1 }
           : cartItem
       )
@@ -43,7 +43,7 @@ const[cart,setCart]=useState([])
   }
   console.log(cart);
   function productAlreadyExists(isToFind) {
-    const existingProduct = cart.find((cartItem) => cartItem.id === isToFind);
+    const existingProduct = cart.find((cartItem) => cartItem._id === isToFind);
     return existingProduct ? true : false;
   }
   return (

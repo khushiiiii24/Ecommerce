@@ -8,7 +8,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import SingleProduct from "./pages/SingleProduct";
 import UserContext from "./components/UseContext";
-
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import ProtectedRouter from "./pages/ProtectedRouter";
+// import '../App.css'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,7 +27,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <Cart />,
+        element: (
+          <ProtectedRouter>
+            <Cart />,
+          </ProtectedRouter>
+        ),
       },
       {
         path: "/wishlist",
@@ -34,7 +41,19 @@ const router = createBrowserRouter([
         path: "/product/:id",
         element: <SingleProduct />,
       },
+      {
+        path: "/Register",
+        element: <Register />,
+      },
     ],
+  },
+  {
+    path: "/Login",
+    element: <Login />,
+  },
+  {
+    path: "/Register",
+    element: <Register />,
   },
   {
     path: "*",
@@ -45,14 +64,8 @@ const router = createBrowserRouter([
 function Main() {
   return (
     <UserContext>
-          <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </UserContext>
-
-    // <>
-    //   <Header />
-    //   <Home />
-    //   <Footer />
-    // </>
   );
 }
 

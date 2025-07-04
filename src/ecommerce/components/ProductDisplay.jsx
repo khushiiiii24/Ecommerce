@@ -1,40 +1,23 @@
-import { useContext } from "react";
-import { EcomContext } from "./UseContext";
 import { Link } from "react-router-dom";
 
-function trimContent(input) {
-  return input.length > 50
-    ? input.split(" ").slice(0, 8).join(" ") + "..."
-    : input;
+// 🔧 Trim function for name & description
+function trimText(input, wordCount = 8) {
+  const words = input.trim().split(" ");
+  return words.length > wordCount ? words.slice(0, wordCount).join(" ") + "..." : input;
 }
 
-// function generateRandomHash(input) {
-//   // const ciphertext = CryptoJS.AES.encrypt(input, "secret key 123").toString();
-//   const ciphertext = CryptoJS.MD5(input);
-
-//   console.log(ciphertext);
-// }
-
-// TEMPLATE LITERAL
 function ProductDisplay({ product }) {
-  // const{handleAddToCart}=useContext(EcomContext);
-          // console.log(product.image);
-
   return (
-    <>
-      <div className="product">
-        {/* {generateRandomHash(product.id)} */}
-        <Link to={`/product/${product.id}`}>
-          <img src={product.image} alt="" />
-          
-        </Link>
-        <div className="content">
-          <h3>{trimContent(product.title)}</h3>
-          <p>{product.price}</p>
-          {/* <button onClick={()=>handleAddToCart(product)}>Add To Cart</button> */}
-        </div>
+    <div className="product">
+      <Link to={`/product/${product._id}`}>
+        <img src={product.url} alt={product.name} />
+      </Link>
+      <div className="content">
+        <h3>{trimText(product.name, 8)}</h3>
+        <p>{trimText(product.description, 12)}</p>
+        <p>₹{product.price}</p>
       </div>
-    </>
+    </div>
   );
 }
 
